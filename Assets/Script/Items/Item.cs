@@ -15,6 +15,7 @@ namespace Items
         [SerializeField] private int maxStackSize;
 
         public Sprite ItemIcon => itemIcon;
+        public string ItemName => itemName;
         public int MaxStackSize => maxStackSize;
     }
 }

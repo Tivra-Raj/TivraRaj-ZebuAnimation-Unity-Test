@@ -8,6 +8,7 @@ namespace UI
     public class InventorySlotUI : MonoBehaviour
     {
         [SerializeField] private Image itemSprite;
+        [SerializeField] private TextMeshProUGUI itemName;
         [SerializeField] private TextMeshProUGUI itemCount;
         [SerializeField] private IInventorySlot assignedSlot;
 
@@ -27,6 +28,7 @@ namespace UI
             assignedSlot?.ClearSlot();
             itemSprite.sprite = null;
             itemSprite.color = Color.clear;
+            itemName.text = "";
             itemCount.text = "";
         }
 
@@ -35,6 +37,7 @@ namespace UI
             if (slot.Item != null)
             {
                 UpdateItemImage(slot);
+                UpdateItemName(slot);
                 UpdateItemCount(slot);
             }
             else
@@ -53,6 +56,11 @@ namespace UI
         {
             itemSprite.sprite = slot.Item.ItemIcon;
             itemSprite.color = Color.white;
+        }
+
+        private void UpdateItemName(IInventorySlot slot)
+        {
+            itemName.text = slot.Item.ItemName;
         }
 
         private void UpdateItemCount(IInventorySlot slot)

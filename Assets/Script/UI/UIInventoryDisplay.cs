@@ -41,7 +41,7 @@ namespace UI
             }
         }
 
-        public virtual void UpdateSlot(IInventorySlot passedSlot)
+        public void UpdateSlot(IInventorySlot passedSlot)
         {
             foreach(var slot in slotDictionary)
             {

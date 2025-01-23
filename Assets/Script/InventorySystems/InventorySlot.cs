@@ -5,7 +5,7 @@ using UnityEngine;
 namespace InventorySystems
 {
     [Serializable]
-    public class InventorySlot
+    public class InventorySlot : IInventorySlot
     {
         [SerializeField] private Item item;
         [SerializeField] private int stackSize;
@@ -34,12 +34,6 @@ namespace InventorySystems
         {
             item = null;
             stackSize = -1;
-        }
-
-        public bool RoomLeftInStack(int amountToAdd, out int remainingAmount)
-        {
-            remainingAmount = item.MaxStackSize - stackSize;
-            return RoomLeftInStack(amountToAdd);
         }
 
         public bool RoomLeftInStack(int amountToAdd)

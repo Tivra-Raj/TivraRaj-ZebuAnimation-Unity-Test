@@ -9,19 +9,14 @@ namespace UI
     {
         [SerializeField] private Image itemSprite;
         [SerializeField] private TextMeshProUGUI itemCount;
-        [SerializeField] private InventorySlot assignedSlot;
-
-        public InventorySlot AssignedSlot => assignedSlot;
-
-        public UIInventoryDisplay InventoryDisplay { get; private set; }
+        [SerializeField] private IInventorySlot assignedSlot;
 
         private void Awake()
         {
             ClearSlotUI();
-            InventoryDisplay = transform.parent.GetComponent<UIInventoryDisplay>();
         }
 
-        public void Init(InventorySlot slot)
+        public void Init(IInventorySlot slot)
         {
             assignedSlot = slot;
             UpdateSlotUI(slot);
@@ -35,7 +30,7 @@ namespace UI
             itemCount.text = "";
         }
 
-        public void UpdateSlotUI(InventorySlot slot)
+        public void UpdateSlotUI(IInventorySlot slot)
         {
             if (slot.Item != null)
             {
@@ -54,19 +49,18 @@ namespace UI
                 UpdateSlotUI(assignedSlot);
         }
 
-        private void UpdateItemImage(InventorySlot slot)
+        private void UpdateItemImage(IInventorySlot slot)
         {
             itemSprite.sprite = slot.Item.ItemIcon;
             itemSprite.color = Color.white;
         }
 
-        private void UpdateItemCount(InventorySlot slot)
+        private void UpdateItemCount(IInventorySlot slot)
         {
             if (slot.StackSize > 1)
                 itemCount.text = slot.StackSize.ToString();
             else
                 itemCount.text = "";
         }
-
     }
 }

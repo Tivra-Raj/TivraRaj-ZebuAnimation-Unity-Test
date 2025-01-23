@@ -62,7 +62,7 @@ namespace Player
             if (collectible != null)
             {
                 Item itemData = collectible.Collect();
-                if (inventoryHolder != null && inventoryHolder.InventorySystem.AddToInventory(itemData, 1))
+                if (inventoryHolder != null && inventoryHolder.InventorySystem.AddItemToInventory(itemData, 1))
                 {
                     Destroy(other.gameObject);
                 }

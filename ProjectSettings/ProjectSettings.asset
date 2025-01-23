@@ -842,8 +842,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: TivraRaj-ZebuAnimation Test
-  metroPackageVersion: 
+  metroPackageName: TivraRaj-ZebuAnimationTest
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -851,7 +851,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: TivraRaj-ZebuAnimation Test
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: TivraRaj-ZebuAnimation Test
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

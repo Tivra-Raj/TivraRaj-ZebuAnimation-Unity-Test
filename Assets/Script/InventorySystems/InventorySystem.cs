@@ -14,7 +14,7 @@ namespace InventorySystems
 
         public List<InventorySlot> InventorySlots => inventorySlots;
 
-        public int SlotCount => inventorySlots.Count;
+        public int SlotCount => InventorySlots.Count;
 
         public UnityAction<InventorySlot> OnInventorySlotUpdate;
 

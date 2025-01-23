@@ -9,7 +9,7 @@ namespace InventorySystems
 
         public InventorySystem InventorySystem => inventorySystem;
 
-        void Start()
+        private void Awake()
         {
             inventorySystem = new InventorySystem(inventorySize);
         }

@@ -24,6 +24,12 @@ namespace InventorySystems
             ClearSlot();
         }
 
+        public void UpdateInventorySlot(Item newItem, int itemAmount)
+        {
+            item = newItem;
+            stackSize = itemAmount;
+        }
+
         public void ClearSlot()
         {
             item = null;
